@@ -1,6 +1,6 @@
 rm(list = ls())
 ### Load PSA
-psa <- read.csv("Data/psa_demo_GA.csv")
+psa <- read.csv("MDM_2017_Appendix//psa_demo_GA.csv")
 head(psa)
 
 ### Create following matrices from your PSA
@@ -19,10 +19,10 @@ n.strategies <- ncol(nmb)
 ## For column and row stats
 library(matrixStats)  
 ## To fit spline models
-library(mgcv)
+library(mgcv) # version 1.8-17
 ## Functions to calculate the conditional loss by computing the 
 ## preposterior of each of the basis functions of the GAM model
-source("Rcode/Appendix_Final/GA_functions.R")
+source("MDM_2017_Appendix/GA_functions.R")
 
 ### Find optimal strategy (d*) based on the highest expected NMB
 d.star <- which.max(colMeans(nmb))

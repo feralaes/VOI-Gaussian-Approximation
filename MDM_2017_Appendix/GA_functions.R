@@ -76,7 +76,7 @@ Predict.smooth.ga <- function (object, data, v.ga = 1) {
   #### basis functions of a smooth for one parameter
   
   ### Produce basis functions for one parameter
-  X <- PredictMat(object, data)
+  X <- PredictMat(object, data) # ‘mgcv’ version 1.8-17
   ## Number of observations
   n.obs <- nrow(X)
   
@@ -108,7 +108,7 @@ Predict.matrix.tensor.smooth.ga <- function (object,
       dat[[term[j]]] <- data[[term[j]]]
     }
     X[[i]] <- if (!is.null(object$mc[i])) # before: object$mc[i]
-      PredictMat(object$margin[[i]], dat, n = length(dat[[1]]))
+      PredictMat(object$margin[[i]], dat, n = length(dat[[1]])) # ‘mgcv’ version 1.8-17
     else Predict.matrix(object$margin[[i]], dat)
     n.obs <- nrow(X[[i]])
   } # end for 'i'
@@ -129,7 +129,7 @@ Predict.matrix.tensor.smooth.ga <- function (object,
   }
   
   ### Compute tensor product
-  T.ga <- tensor.prod.model.matrix(X.ga)
+  T.ga <- tensor.prod.model.matrix(X.ga) # ‘mgcv’ version 1.8-17
   
   return(T.ga)
 }
