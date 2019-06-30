@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/95931212.svg)](https://zenodo.org/badge/latestdoi/95931212)
+
 # VOI-Gaussian-Approximation
 A General Gaussian Approximation Approach for Value of Information Analysis
 
